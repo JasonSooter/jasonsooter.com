@@ -7413,9 +7413,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kbar@npm:0.1.0-beta.44":
-  version: 0.1.0-beta.44
-  resolution: "kbar@npm:0.1.0-beta.44"
+"kbar@npm:0.1.0-beta.45":
+  version: 0.1.0-beta.45
+  resolution: "kbar@npm:0.1.0-beta.45"
   dependencies:
     "@radix-ui/react-portal": "npm:^1.0.1"
     fast-equals: "npm:^2.0.3"
@@ -7425,7 +7425,7 @@ __metadata:
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: ac79192b807597ba8343f39174b52166f575992e71073ed641c1653d160fa37effe6c4fa440e70aa9fcafbbc354f2486eae9d962fd331c3ef11b70c1bd02ef4d
+  checksum: 5d40e9d45df3ca3364e774f30c59a9f429edae40c6853dc0392ae3a1497725f20af1d95f8abb9b6d1f1e6608eb5cda49b7818e10e0cd853b5b3512ad7b6046bc
   languageName: node
   linkType: hard
 
@@ -9647,18 +9647,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pliny@npm:0.1.6":
-  version: 0.1.6
-  resolution: "pliny@npm:0.1.6"
+"pliny@npm:0.1.7":
+  version: 0.1.7
+  resolution: "pliny@npm:0.1.7"
   dependencies:
     "@docsearch/react": "npm:^3.5.0"
     "@giscus/react": "npm:^2.3.0"
     "@mailchimp/mailchimp_marketing": "npm:^3.0.80"
     contentlayer: "npm:^0.3.4"
     copyfiles: "npm:^2.4.1"
-    github-slugger: "npm:^1.4.0"
+    github-slugger: "npm:^2.0.0"
     js-yaml: "npm:4.1.0"
-    kbar: "npm:0.1.0-beta.44"
+    kbar: "npm:0.1.0-beta.45"
     next-contentlayer: "npm:^0.3.4"
     next-themes: "npm:^0.2.1"
     probe-image-size: "npm:^7.2.3"
@@ -9668,7 +9668,7 @@ __metadata:
     next: ">=13.0.0"
     react: ^17.0.2 || ^18.0.0
     react-dom: ^17.0.2 || ^18.0.0
-  checksum: 128a2a1122101effd779cfbed77d383a5d32e194b068e43dbd9ae60ecf0deafd908c7fe309a50bbaedad95dd1096ae9ac81affd2ead0b79dc8fdf2c0d7f73ef6
+  checksum: f346d3d10bb73cd597c44d2681b18ac7e70ae5839d73b9b1a1dbf55003e8558f3612de9411695fed644277b76afc46a325f9b73b10d41a1fc597a12d4028dbf4
   languageName: node
   linkType: hard
 
@@ -11485,7 +11485,7 @@ __metadata:
     next: "npm:14.0.4"
     next-contentlayer: "npm:0.3.4"
     next-themes: "npm:^0.2.1"
-    pliny: "npm:0.1.6"
+    pliny: "npm:0.1.7"
     postcss: "npm:^8.4.24"
     prettier: "npm:^3.0.0"
     prettier-plugin-tailwindcss: "npm:^0.5.0"
