@@ -49,7 +49,7 @@ const RAW_RUNTIME_STATE =
           ["lint-staged", "npm:15.2.10"],\
           ["next", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:14.2.18"],\
           ["next-contentlayer", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.3.4"],\
-          ["next-themes", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.2.1"],\
+          ["next-themes", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.4.3"],\
           ["pliny", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.1.6"],\
           ["postcss", "npm:8.4.33"],\
           ["prettier", "npm:3.4.1"],\
@@ -12242,10 +12242,17 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.2.1", {\
-        "packageLocation": "./.yarn/__virtual__/next-themes-virtual-62b6b76b4b/5/cache/others/berry/cache/next-themes-npm-0.2.1-16a440cf6e-10c0.zip/node_modules/next-themes/",\
+      ["npm:0.4.3", {\
+        "packageLocation": "../../../../cache/others/berry/cache/next-themes-npm-0.4.3-45cb093cef-10c0.zip/node_modules/next-themes/",\
         "packageDependencies": [\
-          ["next-themes", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.2.1"],\
+          ["next-themes", "npm:0.4.3"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:3cf1577ed2a1cb47ef8d0104bedb91db788948228801f02f47570a5d8e577d03a7527b6b5e603435cf74090466e24b2b141f943ef6f35fd4c0ac9c6b271f3463#npm:0.2.1", {\
+        "packageLocation": "./.yarn/__virtual__/next-themes-virtual-6a2782f64e/5/cache/others/berry/cache/next-themes-npm-0.2.1-16a440cf6e-10c0.zip/node_modules/next-themes/",\
+        "packageDependencies": [\
+          ["next-themes", "virtual:3cf1577ed2a1cb47ef8d0104bedb91db788948228801f02f47570a5d8e577d03a7527b6b5e603435cf74090466e24b2b141f943ef6f35fd4c0ac9c6b271f3463#npm:0.2.1"],\
           ["@types/next", null],\
           ["@types/react", "npm:18.3.12"],\
           ["@types/react-dom", null],\
@@ -12258,6 +12265,23 @@ const RAW_RUNTIME_STATE =
           "@types/react-dom",\
           "@types/react",\
           "next",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.4.3", {\
+        "packageLocation": "./.yarn/__virtual__/next-themes-virtual-ca23d32829/5/cache/others/berry/cache/next-themes-npm-0.4.3-45cb093cef-10c0.zip/node_modules/next-themes/",\
+        "packageDependencies": [\
+          ["next-themes", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.4.3"],\
+          ["@types/react", "npm:18.3.12"],\
+          ["@types/react-dom", null],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
           "react-dom",\
           "react"\
         ],\
@@ -12899,7 +12923,7 @@ const RAW_RUNTIME_STATE =
           ["kbar", "virtual:3cf1577ed2a1cb47ef8d0104bedb91db788948228801f02f47570a5d8e577d03a7527b6b5e603435cf74090466e24b2b141f943ef6f35fd4c0ac9c6b271f3463#npm:0.1.0-beta.44"],\
           ["next", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:14.2.18"],\
           ["next-contentlayer", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.3.4"],\
-          ["next-themes", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.2.1"],\
+          ["next-themes", "virtual:3cf1577ed2a1cb47ef8d0104bedb91db788948228801f02f47570a5d8e577d03a7527b6b5e603435cf74090466e24b2b141f943ef6f35fd4c0ac9c6b271f3463#npm:0.2.1"],\
           ["probe-image-size", "npm:7.2.3"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:18.3.1"],\
@@ -14985,7 +15009,7 @@ const RAW_RUNTIME_STATE =
           ["lint-staged", "npm:15.2.10"],\
           ["next", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:14.2.18"],\
           ["next-contentlayer", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.3.4"],\
-          ["next-themes", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.2.1"],\
+          ["next-themes", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.4.3"],\
           ["pliny", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.1.6"],\
           ["postcss", "npm:8.4.33"],\
           ["prettier", "npm:3.4.1"],\
