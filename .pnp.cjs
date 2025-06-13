@@ -30,7 +30,7 @@ const RAW_RUNTIME_STATE =
           ["@next/bundle-analyzer", "npm:14.2.30"],\
           ["@svgr/webpack", "npm:8.1.0"],\
           ["@tailwindcss/forms", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.5.10"],\
-          ["@tailwindcss/typography", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.5.15"],\
+          ["@tailwindcss/typography", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.5.16"],\
           ["@types/mdx", "npm:2.0.13"],\
           ["@types/react", "npm:19.1.8"],\
           ["@typescript-eslint/eslint-plugin", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:8.34.0"],\
@@ -5192,17 +5192,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@tailwindcss/typography", [\
-      ["npm:0.5.15", {\
-        "packageLocation": "../../../../../../runner/cache/others/berry/cache/@tailwindcss-typography-npm-0.5.15-9a4acf8b32-10c0.zip/node_modules/@tailwindcss/typography/",\
+      ["npm:0.5.16", {\
+        "packageLocation": "../../../../../../runner/cache/others/berry/cache/@tailwindcss-typography-npm-0.5.16-675125d30f-10c0.zip/node_modules/@tailwindcss/typography/",\
         "packageDependencies": [\
-          ["@tailwindcss/typography", "npm:0.5.15"]\
+          ["@tailwindcss/typography", "npm:0.5.16"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.5.15", {\
-        "packageLocation": "./.yarn/__virtual__/@tailwindcss-typography-virtual-c8a2dc0ec0/7/runner/cache/others/berry/cache/@tailwindcss-typography-npm-0.5.15-9a4acf8b32-10c0.zip/node_modules/@tailwindcss/typography/",\
+      ["virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.5.16", {\
+        "packageLocation": "./.yarn/__virtual__/@tailwindcss-typography-virtual-7791a814ac/7/runner/cache/others/berry/cache/@tailwindcss-typography-npm-0.5.16-675125d30f-10c0.zip/node_modules/@tailwindcss/typography/",\
         "packageDependencies": [\
-          ["@tailwindcss/typography", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.5.15"],\
+          ["@tailwindcss/typography", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.5.16"],\
           ["@types/tailwindcss", null],\
           ["lodash.castarray", "npm:4.4.0"],\
           ["lodash.isplainobject", "npm:4.0.6"],\
@@ -14656,7 +14656,7 @@ const RAW_RUNTIME_STATE =
           ["@next/bundle-analyzer", "npm:14.2.30"],\
           ["@svgr/webpack", "npm:8.1.0"],\
           ["@tailwindcss/forms", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.5.10"],\
-          ["@tailwindcss/typography", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.5.15"],\
+          ["@tailwindcss/typography", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.5.16"],\
           ["@types/mdx", "npm:2.0.13"],\
           ["@types/react", "npm:19.1.8"],\
           ["@typescript-eslint/eslint-plugin", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:8.34.0"],\
