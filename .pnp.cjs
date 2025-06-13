@@ -62,7 +62,7 @@ const RAW_RUNTIME_STATE =
           ["rehype-citation", "npm:1.0.3"],\
           ["rehype-katex", "npm:6.0.3"],\
           ["rehype-preset-minify", "npm:6.0.0"],\
-          ["rehype-prism-plus", "npm:2.0.0"],\
+          ["rehype-prism-plus", "npm:2.0.1"],\
           ["rehype-slug", "npm:6.0.0"],\
           ["remark", "npm:15.0.1"],\
           ["remark-gfm", "npm:3.0.1"],\
@@ -13576,10 +13576,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["rehype-prism-plus", [\
-      ["npm:2.0.0", {\
-        "packageLocation": "../../../../../../runner/cache/others/berry/cache/rehype-prism-plus-npm-2.0.0-7fe3f63c8c-10c0.zip/node_modules/rehype-prism-plus/",\
+      ["npm:2.0.1", {\
+        "packageLocation": "../../../../../../runner/cache/others/berry/cache/rehype-prism-plus-npm-2.0.1-71e9b020ba-10c0.zip/node_modules/rehype-prism-plus/",\
         "packageDependencies": [\
-          ["rehype-prism-plus", "npm:2.0.0"],\
+          ["rehype-prism-plus", "npm:2.0.1"],\
           ["hast-util-to-string", "npm:3.0.0"],\
           ["parse-numeric-range", "npm:1.3.0"],\
           ["refractor", "npm:4.8.1"],\
@@ -14688,7 +14688,7 @@ const RAW_RUNTIME_STATE =
           ["rehype-citation", "npm:1.0.3"],\
           ["rehype-katex", "npm:6.0.3"],\
           ["rehype-preset-minify", "npm:6.0.0"],\
-          ["rehype-prism-plus", "npm:2.0.0"],\
+          ["rehype-prism-plus", "npm:2.0.1"],\
           ["rehype-slug", "npm:6.0.0"],\
           ["remark", "npm:15.0.1"],\
           ["remark-gfm", "npm:3.0.1"],\
