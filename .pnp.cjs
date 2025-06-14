@@ -46,7 +46,7 @@ const RAW_RUNTIME_STATE =
           ["github-slugger", "npm:1.5.0"],\
           ["gray-matter", "npm:4.0.3"],\
           ["husky", "npm:9.1.7"],\
-          ["image-size", "npm:1.1.1"],\
+          ["image-size", "npm:1.2.1"],\
           ["lint-staged", "npm:15.5.2"],\
           ["next", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:14.2.30"],\
           ["next-contentlayer", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.3.4"],\
@@ -9380,10 +9380,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["image-size", [\
-      ["npm:1.1.1", {\
-        "packageLocation": "../../../../../../runner/cache/others/berry/cache/image-size-npm-1.1.1-4e6d664667-10c0.zip/node_modules/image-size/",\
+      ["npm:1.2.1", {\
+        "packageLocation": "../../../../../../runner/cache/others/berry/cache/image-size-npm-1.2.1-e285f3c080-10c0.zip/node_modules/image-size/",\
         "packageDependencies": [\
-          ["image-size", "npm:1.1.1"],\
+          ["image-size", "npm:1.2.1"],\
           ["queue", "npm:6.0.2"]\
         ],\
         "linkType": "HARD"\
@@ -14672,7 +14672,7 @@ const RAW_RUNTIME_STATE =
           ["github-slugger", "npm:1.5.0"],\
           ["gray-matter", "npm:4.0.3"],\
           ["husky", "npm:9.1.7"],\
-          ["image-size", "npm:1.1.1"],\
+          ["image-size", "npm:1.2.1"],\
           ["lint-staged", "npm:15.5.2"],\
           ["next", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:14.2.30"],\
           ["next-contentlayer", "virtual:6a0736c9e273c87cd59acbbec4b8c6fb052a32da59f0f7ce9dad8f9362bfe91de85faf06d7e63b7dd936da7d5208f18133db4ca131fb419f2ad022d74732764f#npm:0.3.4"],\
