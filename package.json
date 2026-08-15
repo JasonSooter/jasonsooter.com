@@ -19,7 +19,7 @@
     "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/typography": "^0.5.9",
     "contentlayer2": "0.5.8",
-    "esbuild": "0.24.0",
+    "esbuild": "0.28.2",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.2",
     "image-size": "1.1.1",
