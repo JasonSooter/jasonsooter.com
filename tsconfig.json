@@ -11,16 +11,24 @@
     "composite": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/data/*": ["data/*"],
-      "@/layouts/*": ["layouts/*"],
-      "@/css/*": ["css/*"],
+      "app/*": ["./app/*"],
+      "css/*": ["./css/*"],
+      // WORKAROUND: pliny 0.4.1 declares no "types" conditions and no
+      // typesVersions in its exports map, so under moduleResolution "bundler"
+      // every pliny import fails to typecheck (TS2307). This mapping bypasses
+      // the exports map. It affects type resolution ONLY — webpack resolves
+      // pliny normally without it — so it cannot affect the shipped bundle.
+      // Remove once pliny ships type conditions; verify with `npx tsc --noEmit`.
+      "pliny/*": ["./node_modules/pliny/*"],
+      "@/components/*": ["./components/*"],
+      "@/data/*": ["./data/*"],
+      "@/layouts/*": ["./layouts/*"],
+      "@/css/*": ["./css/*"],
       "contentlayer2/generated": ["./.contentlayer/generated"]
     },
     "plugins": [
@@ -41,5 +49,5 @@
     ".contentlayer/generated/**/*.json",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "eslint.config.mjs"]
 }
