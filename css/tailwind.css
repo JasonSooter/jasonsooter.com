@@ -1,6 +1,99 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/*
+  v4 auto-detects sources but skips anything in .gitignore, which includes
+  node_modules. pliny ships pre-built components whose utility classes are
+  only referenced there, so they must be registered explicitly or their
+  styles are silently dropped from the bundle.
+*/
+@source '../node_modules/pliny';
+
+/* Replaces `darkMode: 'class'` from the old JS config. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* `primary` was `colors.pink` in the v3 config. */
+  --color-primary-50: var(--color-pink-50);
+  --color-primary-100: var(--color-pink-100);
+  --color-primary-200: var(--color-pink-200);
+  --color-primary-300: var(--color-pink-300);
+  --color-primary-400: var(--color-pink-400);
+  --color-primary-500: var(--color-pink-500);
+  --color-primary-600: var(--color-pink-600);
+  --color-primary-700: var(--color-pink-700);
+  --color-primary-800: var(--color-pink-800);
+  --color-primary-900: var(--color-pink-900);
+  --color-primary-950: var(--color-pink-950);
+
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --leading-11: 2.75rem;
+  --leading-12: 3rem;
+  --leading-13: 3.25rem;
+  --leading-14: 3.5rem;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+/* Prose overrides, ported from the `typography` block of the v3 JS config. */
+@layer components {
+  .prose {
+    a {
+      color: var(--color-primary-500);
+      &:hover {
+        color: var(--color-primary-600);
+      }
+      code {
+        color: var(--color-primary-400);
+      }
+    }
+    :is(h1, h2) {
+      font-weight: 700;
+      letter-spacing: var(--tracking-tight);
+    }
+    h3 {
+      font-weight: 600;
+    }
+    code {
+      color: var(--color-indigo-500);
+    }
+  }
+
+  .prose-invert {
+    a {
+      color: var(--color-primary-500);
+      &:hover {
+        color: var(--color-primary-400);
+      }
+      code {
+        color: var(--color-primary-400);
+      }
+    }
+    :is(h1, h2, h3, h4, h5, h6) {
+      color: var(--color-gray-100);
+    }
+  }
+}
 
 .task-list-item::before {
   @apply hidden;
