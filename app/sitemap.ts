@@ -1,5 +1,5 @@
 import siteMetadata from '@/data/siteMetadata'
-import { allBlogs } from 'contentlayer/generated'
+import { allBlogs } from 'contentlayer2/generated'
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
