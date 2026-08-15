@@ -61,6 +61,9 @@ module.exports = () => {
   const plugins = [withContentlayer, withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), {
     reactStrictMode: true,
+    // Pin the file-tracing root to this project. Next 15 otherwise infers it
+    // and warns when an unrelated lockfile exists in a parent directory.
+    outputFileTracingRoot: __dirname,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
       dirs: ['app', 'components', 'layouts', 'scripts'],
@@ -81,7 +84,7 @@ module.exports = () => {
         },
       ]
     },
-    webpack: (config, options) => {
+    webpack: (config, _options) => {
       config.module.rules.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
