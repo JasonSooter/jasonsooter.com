@@ -1,5 +1,4 @@
 node_modules
-.yarn
 .next
 .contentlayer
 out
@@ -13,4 +12,4 @@ app/tag-data.json
 # Local, machine-specific settings.
 .claude/settings.local.json
 
-yarn.lock
+package-lock.json
