@@ -11,6 +11,9 @@ const eslintConfig = [
   {
     ignores: [
       'node_modules/**',
+      // Stale Yarn leftovers in an older checkout; `eslint --fix .` would
+      // otherwise traverse and rewrite files inside them.
+      '.yarn/**',
       '.next/**',
       '.contentlayer/**',
       'out/**',

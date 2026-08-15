@@ -2,8 +2,18 @@
 
 # dependencies
 /node_modules
+
+# Stale Yarn / PnP artifacts. The project moved to npm, but an older
+# checkout can still have untracked leftovers (notably .yarn/cache and
+# .yarn/unplugged). Ignored defensively so they are neither committed by
+# accident nor traversed by `eslint --fix .` and `prettier --check .`.
+/.yarn/
+/.yarnrc.yml
+/yarn.lock
 /.pnp
 .pnp.js
+.pnp.cjs
+.pnp.loader.mjs
 
 # testing
 /coverage
