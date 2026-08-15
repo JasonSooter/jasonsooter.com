@@ -38,3 +38,6 @@ npm-debug.log*
 
 # Contentlayer
 .contentlayer
+
+# TypeScript incremental build cache
+*.tsbuildinfo
