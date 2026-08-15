@@ -1,0 +1,145 @@
+---
+title: Rendering Reference
+date: 2026-08-15
+summary: A kitchen-sink post exercising every markdown feature this site supports — code blocks, syntax highlighting, math, tables, footnotes and citations. Used to verify rendering after dependency upgrades.
+tags:
+  - software-development
+bibliography: references-data.bib
+---
+
+This post exists to exercise every part of the markdown pipeline in one place, so
+rendering regressions are obvious after a dependency upgrade. If something here
+looks wrong, the plugin responsible is named in the heading above it.
+
+## Code blocks — `rehype-prism-plus`
+
+A plain block with no language, falling back to the configured `defaultLanguage`:
+
+```
+git rebase origin/main
+```
+
+TypeScript, the most common case on this site:
+
+```ts
+type Post = {
+  slug: string
+  title: string
+  tags: string[]
+  draft?: boolean
+}
+
+export function publishedPosts(posts: Post[]): Post[] {
+  return posts.filter((post) => post.draft !== true)
+}
+```
+
+### Code titles — `remark-code-titles`
+
+The title bar is a separate element (`.remark-code-title`) styled to sit flush on
+top of the block. If the two ever drift apart, the radius or margin rules are the
+cause:
+
+```js:scripts/rss.mjs
+const publishPosts = allBlogs.filter((post) => post.draft !== true)
+```
+
+### Line highlighting
+
+Lines 2 and 4-5 should be marked:
+
+```js {2,4-5}
+const config = {
+  darkMode: 'class',
+  content: ['./app/**/*.tsx'],
+  theme: {
+    extend: {},
+  },
+}
+```
+
+### Line numbers
+
+```py showLineNumbers
+def slugify(value: str) -> str:
+    return value.lower().replace(" ", "-")
+
+
+print(slugify("Rendering Reference"))
+```
+
+### Other languages
+
+```bash
+rm -rf .contentlayer .next && yarn build
+```
+
+```css
+.remark-code-title {
+  @apply rounded-t-sm bg-gray-700 px-5 py-3 font-mono text-sm font-bold;
+}
+```
+
+```json
+{
+  "engines": { "node": "24.x" }
+}
+```
+
+Inline code such as `yarn dedupe unified` should sit on the surrounding line
+without changing its height.
+
+## Math — `remark-math` + `rehype-katex`
+
+Inline math: the golden ratio $\varphi = \frac{1 + \sqrt{5}}{2}$ sits mid-sentence.
+
+Display math gets its own block and scrolls horizontally if it overflows:
+
+$$
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+$$
+
+## Tables — `remark-gfm`
+
+| Package        | Before  | After  |
+| -------------- | ------- | ------ |
+| `tailwindcss`  | 3.3.3   | 4.3.3  |
+| `contentlayer` | 0.3.4   | 0.5.8  |
+| `node`         | 20.x    | 24.x   |
+
+## Lists and task lists
+
+1. Ordered item
+2. Another, with a nested list
+   - nested bullet
+   - another one
+
+- [x] Completed task
+- [ ] Incomplete task
+
+## Quotes, emphasis, links
+
+> A blockquote, which should carry the prose border and spacing.
+>
+> Spanning two paragraphs.
+
+**Bold**, _italic_, ~~struck through~~, and a [link](https://tailwindcss.com) that
+should pick up the primary colour on hover.
+
+---
+
+## Footnotes
+
+Footnotes render at the bottom with a back-reference arrow[^1], and the
+`.footnotes` rule adds the divider above them[^2].
+
+[^1]: The back-reference is `.data-footnote-backref`, styled to drop its underline.
+[^2]: A second footnote, to confirm ordering and spacing.
+
+## Citations — `rehype-citation`
+
+Citations resolve against `data/references-data.bib` [@Nash1950], and multiple
+keys render together [@Nash1951; @Xie2016]. The bibliography below is generated
+by the plugin, and each entry uses the `.csl-entry` spacing rule.
+
+## References
