@@ -23,7 +23,7 @@
     "esbuild": "0.28.2",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.2",
-    "image-size": "1.2.1",
+    "image-size": "2.0.2",
     "katex": "0.16.9",
     "next": "15.5.23",
     "next-contentlayer2": "0.5.8",
