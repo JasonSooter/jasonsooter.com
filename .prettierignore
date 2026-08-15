@@ -1,0 +1,16 @@
+node_modules
+.yarn
+.next
+.contentlayer
+out
+build
+public
+
+# Generated at build time by contentlayer.config.ts — formatting it only
+# creates churn, since the next build rewrites it.
+app/tag-data.json
+
+# Local, machine-specific settings.
+.claude/settings.local.json
+
+yarn.lock
