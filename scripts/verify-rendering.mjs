@@ -90,8 +90,21 @@ const css = readdirSync(CSS_DIR)
   .map((f) => readFileSync(path.join(CSS_DIR, f), 'utf8'))
   .join('\n')
 
+/**
+ * Whether `selector` appears in the stylesheet as a whole selector.
+ *
+ * A plain substring test would accept a longer class that merely starts with
+ * it — `.katex .baseline` would satisfy `.katex .base`, and `.token-list`
+ * would satisfy `.token` — silently defeating the drift check. Requiring the
+ * next character to be something that cannot continue a class name (so `{`
+ * `,` `:` `.` `>` `+` `~` `[` or whitespace) rules that out, while still
+ * matching compound selectors such as `.token.comment`.
+ */
+const hasRule = (selector) =>
+  new RegExp(`${selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![\\w-])`).test(css)
+
 const unstyled = Object.entries(REQUIRED_STYLES)
-  .filter(([cls, selector]) => emitted.has(cls) && !css.includes(selector))
+  .filter(([cls, selector]) => emitted.has(cls) && !hasRule(selector))
   .map(([cls, selector]) => `    class "${cls}" is emitted, but "${selector}" has no rule`)
 
 if (unstyled.length) {
