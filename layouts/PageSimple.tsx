@@ -1,7 +1,7 @@
 import PageTitle from '@/components/PageTitle'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import SectionContainer from '@/components/SectionContainer'
-import type { Blog } from 'contentlayer/generated'
+import type { Blog } from 'contentlayer2/generated'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import { ReactNode } from 'react'
 
