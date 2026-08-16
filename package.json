@@ -15,7 +15,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "15.5.23",
+    "@next/bundle-analyzer": "16.3.1",
     "@tailwindcss/forms": "^0.5.4",
     "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/typography": "^0.5.9",
@@ -24,7 +24,7 @@
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.2",
     "katex": "^0.16.47",
-    "next": "15.5.23",
+    "next": "16.3.1",
     "next-contentlayer2": "0.5.8",
     "next-themes": "^0.4.0",
     "pliny": "0.4.1",
@@ -53,7 +53,7 @@
     "@typescript-eslint/parser": "^8.0.0",
     "cross-env": "^10.1.0",
     "eslint": "^9.0.0",
-    "eslint-config-next": "15.5.23",
+    "eslint-config-next": "16.3.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.0.0",
     "husky": "^9.1.7",
