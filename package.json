@@ -22,7 +22,7 @@
     "esbuild": "0.28.2",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.2",
-    "katex": "^0.16.47",
+    "katex": "^0.18.0",
     "next": "16.3.1",
     "next-themes": "^0.4.0",
     "pliny": "0.4.1",
