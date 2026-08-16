@@ -1,32 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended", ":semanticCommits"],
-  "packageRules": [
-    {
-      "description": [
-        "Hold katex on the 0.16 line. rehype-katex 7 depends on katex ^0.16.0, so bumping the top-level pin does not upgrade it \u2014 npm keeps a nested 0.16 for rehype-katex to render with while the app imports the newer stylesheet.",
-        "katex 0.18 drops the `.katex .base` rule that 0.16-generated markup still emits, so math ships unstyled while the build stays green (see #253).",
-        "Remove this rule once rehype-katex publishes a release depending on katex >=0.18, then bump both together."
-      ],
-      "matchPackageNames": ["katex"],
-      "allowedVersions": "^0.16"
-    },
-    {
-      "description": [
-        "Hold eslint on v9. eslint-config-next 15.5.23 declares a peer of eslint '^7.23.0 || ^8.0.0 || ^9.0.0', so v10 cannot resolve; only eslint-config-next 16 widens that to '>=9.0.0' (see #256).",
-        "eslint 10 also stopped bundling @eslint/eslintrc, which eslint.config.mjs imports for FlatCompat, so that must be added as an explicit devDependency at the same time.",
-        "This is therefore gated behind the Next 16 upgrade. Remove once next and eslint-config-next reach 16 here."
-      ],
-      "matchPackageNames": ["eslint"],
-      "allowedVersions": "^9"
-    },
-    {
-      "description": [
-        "Hold typescript on v5. @typescript-eslint/parser 8.67.0 is the newest release and caps typescript at '>=4.8.4 <6.1.0', so v7 fails to install outright \u2014 npm errors with ERESOLVE, and even Renovate's own lockfile update fails (see #259).",
-        "Remove once typescript-eslint publishes a release supporting typescript 7."
-      ],
-      "matchPackageNames": ["typescript"],
-      "allowedVersions": "^5"
-    }
-  ]
+  "packageRules": []
 }
