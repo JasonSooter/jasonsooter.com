@@ -1,4 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":semanticCommits"]
+  "extends": ["config:recommended", ":semanticCommits"],
+  "packageRules": [
+    {
+      "description": [
+        "Hold katex on the 0.16 line. rehype-katex 7 depends on katex ^0.16.0, so bumping the top-level pin does not upgrade it — npm keeps a nested 0.16 for rehype-katex to render with while the app imports the newer stylesheet.",
+        "katex 0.18 drops the `.katex .base` rule that 0.16-generated markup still emits, so math ships unstyled while the build stays green (see #253).",
+        "Remove this rule once rehype-katex publishes a release depending on katex >=0.18, then bump both together."
+      ],
+      "matchPackageNames": ["katex"],
+      "allowedVersions": "^0.16"
+    }
+  ]
 }
