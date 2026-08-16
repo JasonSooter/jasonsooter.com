@@ -10,6 +10,32 @@
       ],
       "matchPackageNames": ["katex"],
       "allowedVersions": "^0.16"
+    },
+    {
+      "description": [
+        "Hold eslint on v9. eslint-config-next 15.5.23 declares a peer of eslint '^7.23.0 || ^8.0.0 || ^9.0.0', so v10 cannot resolve; only eslint-config-next 16 widens that to '>=9.0.0' (see #256).",
+        "eslint 10 also stopped bundling @eslint/eslintrc, which eslint.config.mjs imports for FlatCompat, so that must be added as an explicit devDependency at the same time.",
+        "This is therefore gated behind the Next 16 upgrade. Remove once next and eslint-config-next reach 16 here."
+      ],
+      "matchPackageNames": ["eslint"],
+      "allowedVersions": "^9"
+    },
+    {
+      "description": [
+        "Hold typescript on v5. @typescript-eslint/parser 8.67.0 is the newest release and caps typescript at '>=4.8.4 <6.1.0', so v7 fails to install outright — npm errors with ERESOLVE, and even Renovate's own lockfile update fails (see #259).",
+        "Remove once typescript-eslint publishes a release supporting typescript 7."
+      ],
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "^5"
+    },
+    {
+      "description": [
+        "Hold the Next.js monorepo on v15. Next 16 makes Turbopack the default and withContentlayer injects a webpack config, so the build fails outright; contentlayer2 0.5.8 has no Turbopack support. `next build --webpack` defers that but not the rest (see #266).",
+        "Next 16 also rewrites tsconfig.json to moduleResolution 'bundler'. That part is already handled — #270 moved us there and mapped pliny explicitly, since pliny 0.4.1 ships no `types` conditions.",
+        "Remove once contentlayer2 supports Turbopack, or the project moves off contentlayer."
+      ],
+      "matchPackageNames": ["next", "@next/bundle-analyzer", "eslint-config-next"],
+      "allowedVersions": "^15"
     }
   ]
 }
