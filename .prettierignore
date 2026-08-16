@@ -1,11 +1,11 @@
 node_modules
 .next
-.contentlayer
+.velite
 out
 build
 public
 
-# Generated at build time by contentlayer.config.ts — formatting it only
+# Generated at build time by velite.config.ts — formatting it only
 # creates churn, since the next build rewrites it.
 app/tag-data.json
 

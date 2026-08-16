@@ -29,7 +29,7 @@
       "@/data/*": ["./data/*"],
       "@/layouts/*": ["./layouts/*"],
       "@/css/*": ["./css/*"],
-      "contentlayer2/generated": ["./.contentlayer/generated"]
+      "@/velite": ["./.velite"]
     },
     "plugins": [
       {
@@ -45,8 +45,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.json",
-    ".contentlayer/generated",
-    ".contentlayer/generated/**/*.json",
+    ".velite",
     ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules", "eslint.config.mjs"]

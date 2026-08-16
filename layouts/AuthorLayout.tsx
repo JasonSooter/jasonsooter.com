@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import type { Authors } from 'contentlayer2/generated'
+import type { Authors } from '@/velite'
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
 

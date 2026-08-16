@@ -1,5 +1,5 @@
 import { sortPosts, allCoreContent } from 'pliny/utils/contentlayer'
-import { allBlogs } from 'contentlayer2/generated'
+import { blog as allBlogs } from '@/velite'
 import Main from './Main'
 
 export default async function Page() {
