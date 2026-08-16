@@ -3,7 +3,7 @@ import { slug as slugify } from 'github-slugger'
 import path from 'path'
 import { sortPosts } from 'pliny/utils/contentlayer.js'
 import { escape } from 'pliny/utils/htmlEscaper.js'
-import { allBlogs } from '../.contentlayer/generated/index.mjs'
+import { blog as allBlogs } from '../.velite/index.js'
 import tagData from '../app/tag-data.json' with { type: 'json' }
 import siteMetadata from '../data/siteMetadata.js'
 

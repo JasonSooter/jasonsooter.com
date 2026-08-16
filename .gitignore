@@ -36,8 +36,8 @@ npm-debug.log*
 .env.test.local
 .env.production.local
 
-# Contentlayer
-.contentlayer
+# Velite
+.velite
 
 # TypeScript incremental build cache
 *.tsbuildinfo

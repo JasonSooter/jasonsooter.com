@@ -7,11 +7,11 @@ import PageSimple from '@/layouts/PageSimple'
 import PostBanner from '@/layouts/PostBanner'
 import PostLayout from '@/layouts/PostLayout'
 import PostSimple from '@/layouts/PostSimple'
-import type { Authors, Blog } from 'contentlayer2/generated'
-import { allAuthors, allBlogs } from 'contentlayer2/generated'
+import type { Authors, Blog } from '@/velite'
+import { authors as allAuthors, blog as allBlogs } from '@/velite'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { MDXLayoutRenderer } from 'pliny/mdx-components'
+import MDXContent from '@/components/MDXContent'
 import { allCoreContent, coreContent, sortPosts } from 'pliny/utils/contentlayer'
 
 const defaultLayout = 'PostLayout'
@@ -116,7 +116,7 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Layout content={mainContent} authorDetails={authorDetails} next={next} prev={prev}>
-        <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
+        <MDXContent code={post.body.code} components={components} toc={post.toc} />
       </Layout>
     </>
   )

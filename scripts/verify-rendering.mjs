@@ -11,14 +11,14 @@
  * imported 0.18's stylesheet, which no longer defines `.katex .base`. Nothing
  * failed, and the only page with math is a draft, so no preview showed it.
  *
- * Reading contentlayer's output rather than a rendered page is deliberate:
+ * Reading velite's output rather than a rendered page is deliberate:
  * the fixture stays `draft: true` and never ships, but its markup is still
  * generated on every build.
  */
 import { readFileSync, readdirSync, existsSync } from 'fs'
 import path from 'path'
 
-const FIXTURE = '.contentlayer/generated/Blog/blog__rendering-reference.mdx.json'
+const FIXTURE = '.velite/blog.json'
 const CSS_DIR = '.next/static/css'
 
 /** Markup that must be produced, as class -> what it proves. */
@@ -53,14 +53,19 @@ const fail = (msg) => {
 }
 
 if (!existsSync(FIXTURE)) {
-  fail(
-    `  Could not find ${FIXTURE}\n` +
-      `  The rendering fixture is missing. If data/blog/rendering-reference.mdx\n` +
-      `  was deleted, remove this check from the build script too.`
-  )
+  fail(`  Could not find ${FIXTURE}\n` + `  Velite produced no output. Run \`velite build\` first.`)
 }
 
-const code = JSON.parse(readFileSync(FIXTURE, 'utf8')).body.code
+const fixture = JSON.parse(readFileSync(FIXTURE, 'utf8')).find(
+  (doc) => doc.slug === 'rendering-reference'
+)
+if (!fixture) {
+  fail(
+    `  data/blog/rendering-reference.mdx produced no entry in ${FIXTURE}\n` +
+      `  If the fixture was deleted, remove this check from the build script too.`
+  )
+}
+const code = fixture.body.code
 
 // Compiled MDX emits classes as className:"a b c" — parse them rather than
 // substring-matching, which false-positives ("base" inside "rebase").

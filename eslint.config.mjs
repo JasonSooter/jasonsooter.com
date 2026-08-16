@@ -12,7 +12,7 @@ const eslintConfig = [
     ignores: [
       'node_modules/**',
       '.next/**',
-      '.contentlayer/**',
+      '.velite/**',
       'out/**',
       'build/**',
       'public/**',
