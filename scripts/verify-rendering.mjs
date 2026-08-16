@@ -19,7 +19,7 @@ import { readFileSync, readdirSync, existsSync } from 'fs'
 import path from 'path'
 
 const FIXTURE = '.velite/blog.json'
-const CSS_DIR = '.next/static/css'
+const STATIC_DIR = '.next/static'
 
 /** Markup that must be produced, as class -> what it proves. */
 const REQUIRED_CLASSES = {
@@ -86,14 +86,29 @@ if (missingMarkup.length) {
   )
 }
 
-if (!existsSync(CSS_DIR)) {
-  fail(`  Could not find ${CSS_DIR} — run this after \`next build\`.`)
+/**
+ * Collect every emitted stylesheet.
+ *
+ * Walked rather than read from a fixed directory: webpack emitted to
+ * .next/static/css, Turbopack emits to .next/static/chunks, and pinning either
+ * one makes this check silently find nothing after a Next upgrade.
+ */
+const collectCss = (dir) =>
+  readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const full = path.join(dir, entry.name)
+    if (entry.isDirectory()) return collectCss(full)
+    return entry.name.endsWith('.css') ? [full] : []
+  })
+
+if (!existsSync(STATIC_DIR)) {
+  fail(`  Could not find ${STATIC_DIR} — run this after \`next build\`.`)
 }
 
-const css = readdirSync(CSS_DIR)
-  .filter((f) => f.endsWith('.css'))
-  .map((f) => readFileSync(path.join(CSS_DIR, f), 'utf8'))
-  .join('\n')
+const cssFiles = collectCss(STATIC_DIR)
+if (cssFiles.length === 0) {
+  fail(`  No stylesheets found under ${STATIC_DIR} — the build may have changed its output layout.`)
+}
+const css = cssFiles.map((f) => readFileSync(f, 'utf8')).join('\n')
 
 /**
  * Whether `selector` appears in the stylesheet as a whole selector.

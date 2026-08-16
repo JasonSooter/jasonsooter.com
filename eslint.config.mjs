@@ -1,11 +1,7 @@
-import { FlatCompat } from '@eslint/eslintrc'
 import js from '@eslint/js'
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals'
 import prettierRecommended from 'eslint-plugin-prettier/recommended'
-
-const compat = new FlatCompat({
-  baseDirectory: import.meta.dirname,
-  recommendedConfig: js.configs.recommended,
-})
+import tseslint from 'typescript-eslint'
 
 const eslintConfig = [
   {
@@ -21,9 +17,11 @@ const eslintConfig = [
     ],
   },
   js.configs.recommended,
-  // eslint-config-next has no flat-config export yet, so it is bridged
-  // through FlatCompat. This also pulls in the react and react-hooks rules.
-  ...compat.extends('next/core-web-vitals', 'plugin:@typescript-eslint/recommended'),
+  // eslint-config-next 16 ships a native flat config, so it is imported
+  // directly. Bridging it through @eslint/eslintrc's FlatCompat — which was
+  // required up to v15 — now throws on a circular `react` reference.
+  ...nextCoreWebVitals,
+  ...tseslint.configs.recommended,
   // Must come last: disables stylistic rules that would fight Prettier.
   prettierRecommended,
   {
@@ -41,6 +39,17 @@ const eslintConfig = [
     languageOptions: {
       globals: { process: 'readonly', console: 'readonly', __dirname: 'readonly' },
     },
+  },
+  {
+    // MDXContent builds its component from a compiled-MDX string, which cannot
+    // be hoisted to module scope — that is the component's entire purpose. The
+    // rule guards against remounting a fresh identity each render; the module
+    // level cache keeps identity stable, and it is a server component rendered
+    // once at build time. Expressed here rather than as an inline directive
+    // because prettier reflows the surrounding comment and eslint --fix then
+    // removes the directive as unused.
+    files: ['components/MDXContent.tsx'],
+    rules: { 'react-hooks/static-components': 'off' },
   },
   {
     // CommonJS config files are loaded by Node, not bundled, so require() is

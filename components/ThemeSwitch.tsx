@@ -1,14 +1,21 @@
 'use client'
 
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 
 const ThemeSwitch = () => {
-  const [mounted, setMounted] = useState(false)
   const { theme, setTheme, resolvedTheme } = useTheme()
 
-  // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), [])
+  // Render nothing until hydrated, so the server markup (which cannot know the
+  // resolved theme) never mismatches the client. Previously a useState +
+  // useEffect pair; useSyncExternalStore expresses the same thing without
+  // setting state in an effect, which Next 16's React compiler rules reject as a
+  // cause of cascading renders.
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  )
 
   if (!mounted) {
     return null
