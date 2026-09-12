@@ -1,5 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended", ":semanticCommits"],
-  "packageRules": []
+  "packageRules": [
+    {
+      "description": "Pin katex to 0.16.x: rehype-katex@7 and micromark-extension-math@3 both depend on katex ^0.16.0, so bumping the root dep only swaps the stylesheet while 0.16 still renders the markup. KaTeX 0.18 changed its CSS classes, which breaks the build's rendering check. Revisit when rehype-katex ships 0.18 support.",
+      "matchPackageNames": ["katex", "@types/katex"],
+      "allowedVersions": "<0.17.0"
+    }
+  ]
 }
