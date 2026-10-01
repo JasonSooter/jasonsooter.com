@@ -3,9 +3,9 @@
   "extends": ["config:recommended", ":semanticCommits"],
   "packageRules": [
     {
-      "description": "Gate katex major updates behind Dependency Dashboard approval. rehype-katex@7 and micromark-extension-math@3 both depend on katex ^0.16.0, so bumping the root dep only swaps the stylesheet while 0.16 still renders the markup. KaTeX 0.18 changed its CSS classes, so the two drift apart and the build's rendering check fails (see #277). Approve this only in a PR that also moves rehype-katex/remark-math to releases supporting the new KaTeX.",
+      "description": "Gate katex major and minor updates behind Dependency Dashboard approval. rehype-katex@7 and micromark-extension-math@3 both depend on katex ^0.16.0, so bumping the root dep only swaps the stylesheet while 0.16 still renders the markup. KaTeX 0.18 changed its CSS classes, so the two drift apart and the build's rendering check fails (see #277). Minor is included because Renovate classifies 0.x bumps such as 0.16 -> 0.19 as minor, which let #290 through a major-only rule. Approve this only in a PR that also moves rehype-katex/remark-math to releases supporting the new KaTeX.",
       "matchPackageNames": ["katex", "@types/katex"],
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": ["major", "minor"],
       "dependencyDashboardApproval": true
     }
   ]
